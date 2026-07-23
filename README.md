@@ -1,4 +1,4 @@
-# 🗳️ Election Management Software
+# 🗳️ Election Management Software.
 
 A lightweight **offline election management system** developed in **Python** for schools and organizations. The system allows voters to securely cast votes through a graphical interface while a local server receives and stores vote counts in real time.
 
