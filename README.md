@@ -8,16 +8,16 @@ Designed for **Local Area Networks (LAN)**, the application requires **no intern
 
 ## ✨ Features
 
-- 🖥️ Fullscreen graphical voting interface
-- 🔒 Password protected voting access
-- 🗳️ One vote per position
-- 👤 Candidate photographs with selection highlighting
-- ✅ Review page before final submission
-- 📡 Real-time LAN communication using Python sockets
-- 💾 Automatic vote counting and CSV storage
-- 🚫 Prevents accidental closing (Alt + F4 & Close Button)
-- ⚡ Lightweight and completely offline
-- 🔄 Automatically resets after every successful vote
+- 🖥️ Fullscreen graphical voting interface.
+- 🔒 Password protected voting access.
+- 🗳️ One vote per position.
+- 👤 Candidate photographs with selection highlighting.
+- ✅ Review page before final submission.
+- 📡 Real-time LAN communication using Python sockets.
+- 💾 Automatic vote counting and CSV storage.
+- 🚫 Prevents accidental closing (Alt + F4 & Close Button).
+- ⚡ Lightweight and completely offline.
+- 🔄 Automatically resets after every successful vote.
 
 ---
 
