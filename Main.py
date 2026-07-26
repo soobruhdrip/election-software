@@ -4,21 +4,36 @@ import socket
 from PIL import Image, ImageTk
 import os
 
+
+def load_background(frame, image_path):
+    screen_width = frame.winfo_screenwidth()
+    screen_height = frame.winfo_screenheight()
+    image = Image.open(image_path)
+    image = image.resize((screen_width, screen_height), Image.LANCZOS)
+    return ImageTk.PhotoImage(image)
+
+
 def on_close():
     messagebox.showinfo("Notice", "Chup Chap Vote Kar")
+
 
 def disable_alt_f4(event):
     messagebox.showinfo("Notice", "Chup Chap Vote Kar")
 
+
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
+
         self.title("DAV ELECTIONS")
         self.attributes("-fullscreen", True)
         self.resizable(False, False)
+
         self.protocol("WM_DELETE_WINDOW", on_close)
         self.bind_all("<Alt-F4>", disable_alt_f4)
+
         self.frames = {}
+
         for F in (LoginPage, Page1, Page2, Page3, Page4, Page5, Page6):
             frame = F(self)
             self.frames[F] = frame
@@ -31,8 +46,10 @@ class App(tk.Tk):
 
     def show_frame(self, page_class):
         frame = self.frames[page_class]
+
         if page_class == Page6:
-            frame.update_review() 
+            frame.update_review()
+
         frame.tkraise()
 
         
@@ -43,11 +60,20 @@ class LoginPage(tk.Frame):
         super().__init__(parent)
 
         try:
-            self.bg_image = tk.PhotoImage(file=r"D:\Elections\11th\png\background\lgn.png")    #File Location For Background
+            img = Image.open(r"D:\Elections\11th\png\background\lgn.png")    #File Location For Background
+
+            screen_width = self.winfo_screenwidth()
+            screen_height = self.winfo_screenheight()
+
+            img = img.resize((screen_width, screen_height), Image.LANCZOS)
+
+            self.bg_image = ImageTk.PhotoImage(img)
+
             bg_label = tk.Label(self, image=self.bg_image)
-            bg_label.place(relwidth=1, relheight=1)
-        except tk.TclError:
-            print("Error loading background image.")
+            bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+        except Exception as e:
+            print(f"Error loading background image: {e}")
 
         login_frame = tk.LabelFrame(self, bd=2, relief="solid", padx=15, pady=15)
         login_frame.place(relx=0.86, rely=0.65, anchor="center")
