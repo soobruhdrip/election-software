@@ -1,9 +1,12 @@
+#Importing Required Libraries
+
 import tkinter as tk
 from tkinter import messagebox
 import socket
 from PIL import Image, ImageTk
 import os
 
+#Screen Size Function
 
 def load_background(frame, image_path):
     screen_width = frame.winfo_screenwidth()
