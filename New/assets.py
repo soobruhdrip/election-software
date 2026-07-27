@@ -1,2 +1,2 @@
-LOGIN_BG = "assets/backgrounds/login.png"
-WELCOME_BG = "assets/backgrounds/welcome.png"
+LOGIN_BG = r"C:\Users\subhr\Downloads\breh.avif"
+WELCOME_BG = r"C:\Users\subhr\Downloads\welcome.avif"
